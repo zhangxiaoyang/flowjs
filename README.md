@@ -25,7 +25,7 @@ Whale instance is created by loading template folder and simply calling `use` ap
 
 ```javascript
 const Whale = require('whale.js');
-var whale = (new Whale('./template')).use('calculator_example_1');
+var whale = (new Whale('./template')).use('calculator');
 ```
 
 ### Session
@@ -47,7 +47,7 @@ There are global predefined functions for cross-node accessing.
 - Current node session setter/getter: `node.$setLocals` or `$`
 - Cross node session getter: `node.$getGlobals` or `$$`
 
-## Example: writing calculator in whale.js
+## Example 1: calculator
 
 ```javascript
 // template/fx/calculator.js
@@ -71,7 +71,39 @@ module.exports = [
       }`,
     },
   ],
-]
+];
+```
+
+## Example 2: parallel
+
+```javascript
+// template/graph/test.js
+module.exports = [
+  [
+    {
+      id: 'a',
+      fx: 'request',
+      x: `{
+        url: $$('x.urls')[0],
+      }`,
+      y: `JSON.parse($('fx')).args.test`,
+    },
+    {
+      id: 'b',
+      fx: 'request',
+      x: `{
+        url: $$('x.urls')[1],
+      }`,
+      y: `JSON.parse($('fx')).args.test`,
+    },
+  ],
+  [
+    {
+      id: 'c',
+      y: `$$('a.y') + $$('b.y')`,
+    },
+  ],
+];
 ```
 
 ## More examples
