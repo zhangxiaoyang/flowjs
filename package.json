@@ -1,0 +1,32 @@
+{
+  "name": "whale.js",
+  "version": "0.1.0",
+  "description": "Configuration driven asynchronous data processing framework in NodeJS",
+  "main": "index.js",
+  "engines": {
+    "node": ">= 10.7.0"
+  },
+  "dependencies": {
+    "jsonpath": "^0.2.12",
+    "lodash": "^4.17.4",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.0.2"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zhangxiaoyang/whale.js"
+  },
+  "author": "zhangxiaoyang.hit@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhangxiaoyang/whale.js/issues"
+  },
+  "homepage": "https://github.com/zhangxiaoyang/whale.js"
+}
