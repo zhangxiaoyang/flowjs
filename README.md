@@ -59,7 +59,7 @@ module.exports = function(node, callback) {
 ```
 
 ```javascript
-// template/graph/test.js
+// template/graph/calculator.js
 module.exports = [
   [
     {
@@ -77,7 +77,7 @@ module.exports = [
 ## Example 2: parallel
 
 ```javascript
-// template/graph/test.js
+// template/graph/parallel.js
 module.exports = [
   [
     {
